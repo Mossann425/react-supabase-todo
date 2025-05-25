@@ -5,7 +5,7 @@ import { InputTodo } from "./components/InputTodo";
 import "./styles.css";
 
 // Supabaseクライアントをインポート
-import { supabase } from "../supabase"; // あなたのsupabase.jsのパスに合わせてください
+import { supabase } from "./supabase"; // あなたのsupabase.jsのパスに合わせてください
 
 export const Todo = () => {
   const [todoText, setTodoText] = useState("");
