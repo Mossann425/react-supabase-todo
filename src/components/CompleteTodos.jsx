@@ -1,17 +1,21 @@
+import React from "react";
+
 export const CompleteTodos = (props) => {
   const { todos, onClickBack } = props;
   return (
     <div className="complete-area">
-      <p className="title">完了のTODO</p>
+      <p className="title">完了したTODO</p>
       <ul>
-        {todos.map((todo, index) => (
-          <li key={todo}>
-            <div className="list-row">
-              <p className="todo-item">{todo}</p>
-              <button onClick={() => onClickBack(index)}>戻す</button>
-            </div>
-          </li>
-        ))}
+        {todos.map((todo) => { // todoがオブジェクトになる
+          return (
+            <li key={todo.id}> {/* keyをtodo.idに変更 */}
+              <div className="list-row">
+                <p className="todo-item">{todo.content}</p> {/* todo.contentを表示 */}
+                <button onClick={() => onClickBack(todo)}>戻す</button> {/* todoオブジェクトを渡す */}
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
